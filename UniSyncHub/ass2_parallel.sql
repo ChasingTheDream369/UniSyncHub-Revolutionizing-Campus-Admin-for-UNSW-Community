@@ -1,0 +1,8 @@
+-- create or replace function
+--    Q7(subject text)
+--      returns table (subject text, term text, convenor text)
+-- as $$ SELECT s.code::text, substring(t.year::text,3,4) || '' || LOWER(t.session), p.name FROM Subjects as s 
+-- JOIN Courses as c ON s.id = c.subject JOIN Terms as t ON c.term = t.id 
+-- JOIN Course_staff u on u.course = c.id JOIN Staff as f on f.id = u.staff 
+-- JOIN people as p on p.id = u.staff where s.code = $1;
+-- $$ language sql;

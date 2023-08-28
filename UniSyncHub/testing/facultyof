@@ -1,0 +1,32 @@
+declare                                                  +
+                    |         _count integer;                                  +
+                    |         _tname text;                                     +
+                    |         _parent integer;                                 +
+                    | begin                                                    +
+                    |         if (_ouid is null) then                          +
+                    |                 return null;                             +
+                    |         end if;                                          +
+                    |                                                          +
+                    |         select count(*) into _count                      +
+                    |         from OrgUnits where id = _ouid;                  +
+                    |         if (_count = 0) then                             +
+                    |                 raise exception 'No such unit: %',_ouid; +
+                    |         end if;                                          +
+                    |                                                          +
+                    |         select t.name into _tname                        +
+                    |         from OrgUnits u, OrgUnit_types t                 +
+                    |         where u.id = _ouid and u.utype = t.id;           +
+                    |                                                          +
+                    |         if (_tname is null) then                         +
+                    |                 return null;                             +
+                    |         elsif (_tname = 'University') then               +
+                    |                 return null;                             +
+                    |         elsif (_tname = 'Faculty') then                  +
+                    |                 return _ouid;                            +
+                    |         else                                             +
+                    |                 select owner into _parent                +
+                    |                 from OrgUnit_groups where member = _ouid;+
+                    |                 return facultyOf(_parent);               +
+                    |         end if;                                          +
+                    | end;                                                     +
+                    | 
