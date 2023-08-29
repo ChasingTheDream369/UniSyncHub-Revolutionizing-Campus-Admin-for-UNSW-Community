@@ -1,6 +1,4 @@
--- COMP3311 20T3 Assignment 2
-
--- Q1: students who've studied many courses
+-- students who've studied many courses
 
 -- Created a helper view which finds the id, name, student id, count
 -- of the students who have done more than 65 courses.
@@ -20,7 +18,7 @@ as
 
 -----##################################################-----
 
--- Q2: numbers of students, staff and both
+-- numbers of students, staff and both
 
 --Created helper view to find the id's for only the 
 -- student's.
@@ -54,7 +52,7 @@ as
 
 -----###################################################-----
 
--- Q3: prolific Course Convenor(s)
+-- Prolific Course Convenor(s)
 
 -- Helper view to find the staff id's which are 
 -- Course Convenor's.
@@ -87,7 +85,7 @@ as
 
 -----###################################################-----
 
--- Q4a: Comp Sci students in 05s2, 3978
+-- Comp Sci students in 05s2, 3978
 
 -- Helper view to find the term for id the desired 
 -- session.
@@ -113,7 +111,7 @@ as
 
 -----###################################################-----
 
--- Q4b: Comp Sci students in 17s1, 3778. 
+-- Comp Sci students in 17s1, 3778. 
 
 -- Helper view to find the term for id the desired 
 -- session.
@@ -140,7 +138,7 @@ as
 
 -----###################################################-----
 
--- Q5: most "committee"d faculty
+-- Most "committee"d faculty
 
 -- Helper view to find the type id for the Faculty or
 -- School orgunits.
@@ -187,7 +185,7 @@ as
 
 -----###################################################-----
 
--- Q6: nameOf function
+-- nameOf function
 
 -- Gets the name of the person where the id given 
 -- matches in the People table. 
@@ -202,7 +200,7 @@ $$ language sql;
 
 -----###################################################-----
 
--- Q7: offerings of a subject
+-- offerings of a subject
 
 -- Gets the name of staff if a staff id is given
 -- otherwise returns nothing.
@@ -233,7 +231,7 @@ $$ language sql;
 
 -----###################################################-----
 
--- Q8: transcript
+-- transcript
 
 -- Returns the program code for the program id given.
 create or replace function
@@ -373,7 +371,7 @@ $$ language plpgsql;
 
 -----###################################################-----
 
--- Q9: members of academic object group
+-- members of academic object group
 
 -- Creates a useful helper funciton which removes all 
 -- the tokens like ,;{} and replaces them with '' to create
@@ -567,7 +565,7 @@ $$ language plpgsql;
 
 -----###################################################-----
 
--- Q10: follow-on courses
+-- follow-on courses
 
 --Returns a set of all course which have the given 
 -- course code as its pre requisite.
